@@ -296,7 +296,8 @@ namespace ARSoft.Tools.Net.Dns
 				{
 					udpClient.ReceiveTimeout = QueryTimeout;
 
-					PrepareAndBindUdpSocket(endpointInfo, udpClient);
+					if (endpointInfo.IsMulticast)
+						udpClient.Bind(new IPEndPoint(endpointInfo.LocalAddress, 0));
 
 					EndPoint serverEndpoint = new IPEndPoint(endpointInfo.ServerAddress, _port);
 
@@ -323,17 +324,6 @@ namespace ARSoft.Tools.Net.Dns
 			}
 		}
 
-		private void PrepareAndBindUdpSocket(DnsClientEndpointInfo endpointInfo, Socket udpClient)
-		{
-			if (endpointInfo.IsMulticast)
-			{
-				udpClient.Bind(new IPEndPoint(endpointInfo.LocalAddress, 0));
-			}
-			else
-			{
-				udpClient.Connect(endpointInfo.ServerAddress, _port);
-			}
-		}
 
 		private byte[] QueryByTcp(IPAddress nameServer, byte[] messageData, int messageLength, ref TcpClient tcpClient, ref NetworkStream tcpStream, out IPAddress responderAddress)
 		{
