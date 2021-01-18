@@ -27,8 +27,8 @@ namespace ARSoft.Tools.Net.Dns
 
 		internal DhcpIRecord() {}
 
-		public DhcpIRecord(string name, int timeToLive, byte[] recordData)
-			: base(name, RecordType.DhcpI, RecordClass.INet, timeToLive)
+		public DhcpIRecord(DomainName name, int timeToLive, byte[] recordData)
+			: base(name, RecordType.Dhcid, RecordClass.INet, timeToLive)
 		{
 			RecordData = recordData ?? new byte[] { };
 		}
@@ -48,9 +48,14 @@ namespace ARSoft.Tools.Net.Dns
 			get { return RecordData.Length; }
 		}
 
-		protected internal override void EncodeRecordData(byte[] messageData, int offset, ref int currentPosition, Dictionary<string, ushort> domainNames)
+		protected internal override void EncodeRecordData(byte[] messageData, int offset, ref int currentPosition, Dictionary<DomainName, ushort> domainNames, bool useCanonical)
 		{
 			DnsMessageBase.EncodeByteArray(messageData, ref currentPosition, RecordData);
+		}
+
+		internal override void ParseRecordData(DomainName origin, string[] stringRepresentation)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
