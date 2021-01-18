@@ -28,6 +28,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Org.BouncyCastle.Crypto.Prng;
 using Org.BouncyCastle.Security;
+using ARSoft.Tools.Net.Extensions;
 
 namespace ARSoft.Tools.Net.Dns
 {

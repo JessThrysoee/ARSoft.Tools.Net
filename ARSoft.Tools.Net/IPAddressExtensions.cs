@@ -24,7 +24,7 @@ using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
 
-namespace ARSoft.Tools.Net
+namespace ARSoft.Tools.Net.Extensions
 {
 	/// <summary>
 	///   Extension class for the <see cref="IPAddress" /> class

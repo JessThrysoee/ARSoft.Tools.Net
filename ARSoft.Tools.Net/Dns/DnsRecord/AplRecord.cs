@@ -22,6 +22,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using ARSoft.Tools.Net.Extensions;
 
 namespace ARSoft.Tools.Net.Dns
 {

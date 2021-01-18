@@ -28,6 +28,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using ARSoft.Tools.Net.Dns.DynamicUpdate;
+using ARSoft.Tools.Net.Extensions;
 
 namespace ARSoft.Tools.Net.Dns
 {

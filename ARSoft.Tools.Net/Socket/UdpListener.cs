@@ -24,7 +24,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
-namespace ARSoft.Tools.Net.Socket
+namespace ARSoft.Tools.Net.Udp.Socket
 {
 	// production ready but not yet ready for public use
 	// --> internal
