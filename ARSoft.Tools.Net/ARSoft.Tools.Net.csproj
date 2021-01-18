@@ -2,7 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Company>Alexander Reinert</Company>
+    <Authors>Fabio Cozzolinon</Authors>
+    <PackageId>ARSoft.Tools.Net</PackageId>
+    <Copyright>Copyright © Alexander Reinert 2010..2017</Copyright>
+    <Version>2.2.9.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
